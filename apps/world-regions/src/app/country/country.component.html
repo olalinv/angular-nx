@@ -1,0 +1,42 @@
+<div *ngIf="country$ | async as country else loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ country.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item><b>Id</b>&nbsp;{{country.id}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>IsoCode</b>&nbsp;{{country.iso2Code}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Capital City</b>&nbsp;{{country.capitalCity}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Income Level</b>&nbsp;{{country.incomeLevel.value}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Lending Type</b>&nbsp;{{country.lendingType.value}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Longitude</b>&nbsp;{{country.longitude}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Latitude</b>&nbsp;{{country.latitude}}
+          <mat-divider [inset]="true"></mat-divider>
+        </mat-list-item>
+        <mat-list-item><b>Region Id</b>&nbsp;{{country.region.id}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  <br>
+  <button mat-raised-button color="primary" [routerLink]="['/region', country.region.id]">
+    Back
+  </button>
+</div>
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>

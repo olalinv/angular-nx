@@ -1,0 +1,57 @@
+{
+  "$schema": "../../node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [{
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/common*.js",
+          "/main*.js",
+          "/ngsw*.js",
+          "/*woker*.js",
+          "/*polyfills*.js",
+          "/runtime*.js"
+        ]
+      }
+    },
+    {
+      "name": "lazyapp",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": ["/*.js"]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [{
+    "name": "api-regions",
+    "urls": [
+      "http://api.worldbank.org/v2/region/ECS/country?per_page=1000&format=json",
+      "http://api.worldbank.org/v2/region/ECS?format=json",
+      "http://api.worldbank.org/v2/region/?format=json",
+      "http://api.worldbank.org/V2/country/ESP?format=json"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "timeout": "5s",
+      "maxAge": "1h",
+      "maxSize": 10
+    }
+  }]
+}

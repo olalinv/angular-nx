@@ -1,0 +1,35 @@
+<form [formGroup]="filterFormGroup">
+  <input formControlName="region"
+         type="text" />
+  <input value="Filter"
+         type="button"
+         [disabled]="filterFormGroup.invalid"
+         (click)="filterById()">
+</form>
+
+<mat-card>
+  <table mat-table [dataSource]="regions$">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let region"> {{region.id}} </td>
+    </ng-container>
+    <!-- Code Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef> Code </th>
+      <td mat-cell *matCellDef="let region"> {{region.code}} </td>
+    </ng-container>
+    <!-- Iso2Code Column -->
+    <ng-container matColumnDef="iso2code">
+      <th mat-header-cell *matHeaderCellDef> Iso2Code </th>
+      <td mat-cell *matCellDef="let region"> {{region.iso2code}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let region"> <a [routerLink]="['/region', region.code]">{{region.name}}</a></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

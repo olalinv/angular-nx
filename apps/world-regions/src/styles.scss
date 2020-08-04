@@ -1,0 +1,18 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+a {
+  color: orangered;
+  text-decoration: none;
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: orangered;
+}

@@ -1,0 +1,24 @@
+<div *ngIf="region !== undefined; else loading">
+  <ng-container *ngIf="region; else noRegion">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ region.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item><b>Id</b>&nbsp;{{region.id}}</mat-list-item>
+          <mat-divider [inset]="true"></mat-divider>
+          <mat-list-item> <b>Code</b>&nbsp;{{region.code}}</mat-list-item>
+          <mat-divider [inset]="true"></mat-divider>
+          <mat-list-item> <b>IsoCode</b>&nbsp;{{region.iso2code}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-template #noRegion>
+    <small>No region</small>
+  </ng-template>
+</div>
+<ng-template #loading>
+  <small>Loading ...</small>
+</ng-template>

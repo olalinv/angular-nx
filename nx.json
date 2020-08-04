@@ -1,0 +1,30 @@
+{
+  "npmScope": "practica",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "world-regions-e2e": {
+      "tags": []
+    },
+    "world-regions": {
+      "tags": []
+    },
+    "shared-domain": {
+      "tags": []
+    },
+    "shared-data": {
+      "tags": []
+    },
+    "material": {
+      "tags": []
+    },
+    "layout": {
+      "tags": []
+    }
+  }
+}

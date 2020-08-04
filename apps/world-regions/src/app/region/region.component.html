@@ -1,0 +1,9 @@
+<div fxLayout="row" fxFill fxLayoutGap="1rem">
+  <practica-region-detail [region]="region$ | async" fxFlex="50"></practica-region-detail>
+  <practica-region-country [countries]="countries$ | async" fxFlex="50"></practica-region-country>
+</div>
+
+<br>
+<button mat-raised-button color="primary" routerLink="/home">
+  Back
+</button>

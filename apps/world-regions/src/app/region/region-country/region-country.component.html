@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Countries</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-nav-list>
+      <cdk-virtual-scroll-viewport style="height: 500px" itemSize="90">
+        <ng-container *ngFor="let country of countries; last as last">
+          <mat-list-item [routerLink]="['/country', country.id]" routerLinkActive="router-link-active">
+            {{ country ? country.name : '' }}
+            <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+          </mat-list-item>
+        </ng-container>
+      </cdk-virtual-scroll-viewport>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>
